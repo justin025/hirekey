@@ -1,0 +1,65 @@
+{{define "content"}}
+
+
+
+<h3 class="recent-search-header">Recent</h3>
+
+        <div class="tab-container">
+            <input type="radio" id="posts-tab" name="main-tabs" checked>
+            <input type="radio" id="about-tab" name="main-tabs">
+
+            <div class="tab-nav">
+                <label for="posts-tab" class="tab-label">
+                    <span class="tab-text">Posts</span>
+                </label>
+
+                <label for="about-tab" class="tab-label">
+                    <span class="tab-text">About</span>
+                </label>
+            </div>
+
+            <div class="panels">
+                <div class="panel" id="posts-panel">
+
+
+    <div class="container">
+        <div class="image-grid">
+            <div class="grid-item">
+                <img src="/static/img/test-img.jpg">
+                <div class="image-label">Full Name</div>
+            </div>
+            
+            <div class="grid-item">
+                <img src="/static/img/test-img.jpg">
+                <div class="image-label">Full Name</div>
+            </div>
+        </div>
+    </div>
+
+
+                </div>
+                <div class="panel" id="about-panel">
+
+    <div class="container">
+        <div class="image-grid">
+            <div class="grid-item">
+                <img src="/static/img/test-img.jpg">
+                <div class="image-label">Full Name</div>
+            </div>
+            
+            <div class="grid-item">
+                <img src="/static/img/test-img.jpg">
+                <div class="image-label">Full Name</div>
+            </div>
+        </div>
+    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+{{end}}

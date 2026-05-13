@@ -1,0 +1,13 @@
+/* FontAwesome */
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('/static/fonts/fa-regular-400.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('/static/fonts/fa-solid-900.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}

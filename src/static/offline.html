@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Offline</title>
+        <meta name="theme-color" content="#d3e7ff">
+        <style>
+            :root {
+                color-scheme: light dark;
+            }
+
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: "Avenir Next", "Nunito Sans", "Segoe UI", sans-serif;
+                background: linear-gradient(150deg, #d3e7ff 0%, #cee5ef 45%, #d8def8 100%);
+                color: #10213a;
+                padding: 20px;
+            }
+
+            .offline-card {
+                width: min(100%, 420px);
+                border: 1px solid rgba(255, 255, 255, 0.62);
+                background: rgba(255, 255, 255, 0.72);
+                border-radius: 18px;
+                box-shadow: 0 16px 30px rgba(12, 28, 62, 0.14);
+                padding: 18px;
+                text-align: center;
+            }
+
+            .offline-card h1 {
+                margin: 0 0 10px;
+                font-size: 1.25rem;
+            }
+
+            .offline-card p {
+                margin: 0;
+                line-height: 1.45;
+                color: #345077;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background: linear-gradient(148deg, #0b1426 0%, #111d35 45%, #172746 100%);
+                    color: #d9e8ff;
+                }
+
+                .offline-card {
+                    border-color: rgba(130, 161, 202, 0.34);
+                    background: rgba(22, 40, 65, 0.84);
+                    box-shadow: 0 20px 36px rgba(2, 10, 24, 0.52);
+                }
+
+                .offline-card p {
+                    color: #9eb8da;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="offline-card">
+            <h1>You are offline</h1>
+            <p>Reconnect to continue using live content. Cached pages and assets remain available.</p>
+        </section>
+    </body>
+</html>

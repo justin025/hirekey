@@ -1,0 +1,52 @@
+# Binaries
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+HireKey.test
+
+# Test binary
+*.test
+
+# Plan 9
+_obj/
+_test/
+_test.exe
+
+# Build directory
+build/
+
+# Vendor directory (if used)
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Mock data / test data
+data/
+*.sqlite3
+*.db
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+
+# Go workspace
+go.work
+go.work.sum

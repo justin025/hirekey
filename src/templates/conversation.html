@@ -1,0 +1,49 @@
+{{define "content"}}
+<div class="conversation-page" id="conversation-page">
+    <aside class="conversation-sidebar">
+        <div class="conversation-sidebar-header">
+            <h2>Messages</h2>
+            <button type="button" class="conversation-primary-button" id="conversation-create-button">Message</button>
+        </div>
+
+        <p class="conversation-status-message conversation-hidden" id="conversation-status-message" role="status" aria-live="polite"></p>
+
+        <div class="conversation-empty-state" id="conversation-empty-state">
+            <h3>No chats yet</h3>
+            <p>Start your first conversation.</p>
+            <button type="button" class="conversation-primary-button" id="conversation-create-button-empty">Message a new user</button>
+        </div>
+
+        <ul class="conversation-list conversation-hidden" id="conversation-list"></ul>
+    </aside>
+
+    <section class="conversation-window">
+        <div class="conversation-window-empty" id="conversation-window-empty">
+            <h3 id="conversation-window-empty-title">No chats yet</h3>
+            <p id="conversation-window-empty-message">Start a conversation and your messages will show up here.</p>
+            <button type="button" class="conversation-primary-button" id="conversation-create-button-window">Message a new user</button>
+        </div>
+
+        <div class="conversation-window-body conversation-hidden" id="conversation-window-body">
+            <header class="conversation-window-header">
+                <button type="button" class="conversation-back-button" id="conversation-back-button" aria-label="Back to conversations">Back</button>
+                <h3 id="conversation-active-title">Conversation</h3>
+            </header>
+
+            <div class="conversation-messages" id="conversation-messages"></div>
+
+            <form class="conversation-message-form" id="conversation-message-form">
+                <input
+                    id="conversation-message-input"
+                    class="conversation-message-input"
+                    type="text"
+                    maxlength="2000"
+                    placeholder="Type a message..."
+                    autocomplete="off"
+                />
+                <button type="submit" class="conversation-send-button" id="conversation-send-button">Send</button>
+            </form>
+        </div>
+    </section>
+</div>
+{{end}}

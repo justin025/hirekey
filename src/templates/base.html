@@ -1,0 +1,30 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{.Title}}</title>
+        <meta name="theme-color" content="#d3e7ff" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#0b1426" media="(prefers-color-scheme: dark)">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-mobile-web-app-title" content="Hirekey">
+        <link rel="manifest" href="/static/manifest.webmanifest">
+        <link rel="apple-touch-icon" href="/static/img/favicon.png">
+        <link rel="icon" type="image/png" href="/static/img/favicon.png">
+        <link rel="stylesheet" href="/static/css/font.css" />
+        <link rel="stylesheet" href="/static/css/style.css" />
+        <link rel="stylesheet" href="/static/css/leaflet.css" />
+    </head>
+    <script type="module" src="/static/js/main.js"></script>
+
+    <body>
+        <div class="main-container">
+            {{template "content" .}}
+        </div>
+    </body>
+
+</html>
+{{end}}

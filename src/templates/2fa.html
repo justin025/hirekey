@@ -1,0 +1,40 @@
+{{define "content"}}
+<section class="auth-page">
+    <div class="auth-glow auth-glow-left"></div>
+    <div class="auth-glow auth-glow-right"></div>
+
+    <article class="auth-card auth-card-narrow">
+        <header class="auth-header">
+            <p class="auth-eyebrow">Verification</p>
+            <h1>Two-Factor Check</h1>
+            <p>Use the mock verification code: <strong>976543</strong></p>
+        </header>
+
+        {{if .Message}}
+        <p class="auth-alert auth-alert-success">{{.Message}}</p>
+        {{end}}
+
+        {{if .Error}}
+        <p class="auth-alert auth-alert-error">{{.Error}}</p>
+        {{end}}
+
+        <form action="/submit/2fa" method="POST" class="auth-form">
+            <input type="hidden" name="login_id" value="{{.LoginId}}" />
+
+            <label class="auth-field auth-code-field">
+                <span>Verification Code</span>
+                <div class="auth-code-grid">
+                    <input class="auth-code-digit" type="text" name="code_1" inputmode="numeric" maxlength="1" pattern="[0-9]" autocomplete="one-time-code" required />
+                    <input class="auth-code-digit" type="text" name="code_2" inputmode="numeric" maxlength="1" pattern="[0-9]" required />
+                    <input class="auth-code-digit" type="text" name="code_3" inputmode="numeric" maxlength="1" pattern="[0-9]" required />
+                    <input class="auth-code-digit" type="text" name="code_4" inputmode="numeric" maxlength="1" pattern="[0-9]" required />
+                    <input class="auth-code-digit" type="text" name="code_5" inputmode="numeric" maxlength="1" pattern="[0-9]" required />
+                    <input class="auth-code-digit" type="text" name="code_6" inputmode="numeric" maxlength="1" pattern="[0-9]" required />
+                </div>
+            </label>
+
+            <button class="auth-submit" type="submit">Verify Account</button>
+        </form>
+    </article>
+</section>
+{{end}}

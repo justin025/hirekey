@@ -1,0 +1,33 @@
+[Unit]
+Description=HireKey Application Server
+Documentation=https://github.com/alextitosdev/hirekey
+After=network.target mongod.service
+Wants=mongod.service
+
+[Service]
+Type=simple
+User=hirekey
+Group=hirekey
+WorkingDirectory=/opt/hirekey
+ExecStart=/opt/hirekey/hirekey
+Restart=on-failure
+RestartSec=5
+
+# Env vars can be set via systemd or passed via docker-compose
+# e.g., systemctl set-environment MONGO_URI=mongodb://...
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/hirekey
+PrivateTmp=true
+RestrictSUIDSGID=true
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=hirekey
+
+[Install]
+WantedBy=multi-user.target

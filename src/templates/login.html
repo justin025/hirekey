@@ -1,0 +1,75 @@
+{{define "content"}}
+<section class="auth-page">
+    <div class="auth-glow auth-glow-left"></div>
+    <div class="auth-glow auth-glow-right"></div>
+
+    <article class="auth-card">
+        <header class="auth-header">
+            <p class="auth-eyebrow">Authentication</p>
+            <h1>Welcome Back</h1>
+            <p>Log in first. Create account is available below if you are new.</p>
+        </header>
+
+        {{if .Message}}
+        <p class="auth-alert auth-alert-success">{{.Message}}</p>
+        {{end}}
+
+        {{if .Error}}
+        <p class="auth-alert auth-alert-error">{{.Error}}</p>
+        {{end}}
+
+        <form action="/submit/login" method="POST" class="auth-form auth-form-login">
+            <label class="auth-field">
+                <span>Username</span>
+                <input type="text" name="username" required />
+            </label>
+
+            <label class="auth-field">
+                <span>Password</span>
+                <input type="password" name="password" required />
+            </label>
+
+            <button class="auth-submit" type="submit">Log In</button>
+        </form>
+
+        <details class="auth-create-shell">
+            <summary>Create Account</summary>
+
+            <form action="/submit/signup" method="POST" class="auth-form auth-form-create">
+                <div class="auth-grid">
+                    <label class="auth-field">
+                        <span>First Name</span>
+                        <input type="text" name="first_name" required />
+                    </label>
+                    <label class="auth-field">
+                        <span>Last Name</span>
+                        <input type="text" name="last_name" required />
+                    </label>
+                </div>
+
+                <label class="auth-field">
+                    <span>Email</span>
+                    <input type="email" name="email" required />
+                </label>
+
+                <label class="auth-field">
+                    <span>Phone Number</span>
+                    <input type="tel" name="phone_number" required />
+                </label>
+
+                <label class="auth-field">
+                    <span>Username</span>
+                    <input type="text" name="username" required />
+                </label>
+
+                <label class="auth-field">
+                    <span>Password</span>
+                    <input type="password" name="password" required />
+                </label>
+
+                <button class="auth-secondary" type="submit">Create Account</button>
+            </form>
+        </details>
+    </article>
+</section>
+{{end}}

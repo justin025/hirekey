@@ -1,0 +1,23 @@
+{
+    "name": "HireKey",
+    "short_name": "HireKey",
+    "description": "Hirekey mobile web app",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#d3e7ff",
+    "theme_color": "#d3e7ff",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/static/img/favicon.png",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/static/img/favicon.png",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
