@@ -17,7 +17,7 @@ var PageTitle string = "HireKey"
 var MongoDBURL string = "mongodb://localhost:27017"
 
 // DBName is the name of the MongoDB database used by HireKey.
-var DBName string = "alex-js"
+var DBName string = "hirekey"
 
 // Port is the HTTP server listen port.
 var Port string = "8080"

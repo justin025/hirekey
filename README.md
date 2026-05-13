@@ -1,9 +1,15 @@
 # HireKey
 
-Go backend · MongoDB · Vanilla JS SPA — Social networking and professional recruitment platform with real-time chat, feed, and events.
+Go backend · MongoDB · Vanilla JS — Social networking and professional recruitment platform with real-time chat, feed, and events.
+
+
+
+| Feed View | Profile View | Recruiting View |
+|---|---|---|
+| ![Feed View](screenshots/feed_view.png) | ![Profile View](screenshots/profile_view_with_event_entities.png) | ![Recruiting View](screenshots/recruiting_view_map_subview.png) |
+| Feed page with multi-tab layout (For You, Following, Your Team), engagement metrics, media attachments, and pagination via `limit`/`offset`. | Profile page with story viewer, follow/block actions, detail rows, and embedded event cards with RSVP. | Leaflet.js map view of recruitment candidates with geographic markers, industry tags, and list/map toggle. |
 
 ---
-
 ## Quick Start
 
 **Prerequisites:** Go 1.25+, MongoDB 6.0+, Docker (optional)
@@ -54,7 +60,7 @@ Access: `http://localhost:8080`
 ```mermaid
 flowchart TD
     subgraph Client["Browser (PWA)"]
-        UI[Vanilla JS SPA]
+        UI[Vanilla JS]
         SW[Service Worker]
     end
 
@@ -86,7 +92,7 @@ flowchart TD
 
 ### Configuration
 
-All runtime config lives in `src/env.go` as Go variables — no `.env` parsing, no env var injection at runtime. Edit the file directly:
+All runtime config lives in `src/env.go` as Go variables — no `.env` parsing, you must edit the file directly:
 
 ```go
 var MongoDBURL string = "mongodb://localhost:27017"
@@ -130,28 +136,6 @@ docker compose build --no-cache
 ldd build/hirekey
 # not a dynamic executable
 ```
-
----
-
-## Visuals
-
-### 1. Feed View
-
-![Feed View](screenshots/feed_view.png)
-
-*Feed page with multi-tab layout (For You, Following, Your Team). Posts include engagement metrics (likes, comments, shares, saves), media attachments (images/videos), and profile avatars. Paginated via `limit`/`offset` query parameters on the API.*
-
-### 2. Profile View with Event Entities
-
-![Profile View with Event Entities](screenshots/profile_view_with_event_entities.png)
-
-*User profile page with story viewer ring, follow/block actions, detail rows (career, education, location), and embedded event cards with RSVP. Profile data resolves from MongoDB `profiles` collection.*
-
-### 3. Recruiting View (Map Subview)
-
-![Recruiting View Map Subview](screenshots/recruiting_view_map_subview.png)
-
-*Leaflet.js map view of recruitment candidates with geographic markers. Candidates have profile photos, industry tags, and education details. Toggle between map and list subview. Data stored in MongoDB `recruits` collection with `latitude`/`longitude` fields.*
 
 ---
 
@@ -226,9 +210,7 @@ hirekey/
 │   └── static/                # CSS, JS, images, fonts, PWA
 ├── deploy/
 │   ├── hirekey.service        # Systemd unit
-│   ├── hirekey-nginx.conf     # Reverse proxy config
-│   └── env.example            # Systemd environment file
-├── .env.example               # Environment template
+│   └── hirekey-nginx.conf     # Reverse proxy config
 ├── docker-compose.yml         # Multi-service deployment
 ├── Dockerfile                 # Multi-stage build
 ├── Makefile                   # Build/run/deploy commands
