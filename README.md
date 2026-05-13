@@ -224,4 +224,5 @@ hirekey/
 
 ## License
 
-MIT
+[CC BY-NC 4.0](LICENSE) — free for personal and educational use. Commercial licensing available on request.
+
